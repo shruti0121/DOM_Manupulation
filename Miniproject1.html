@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121; color: white">
+    <div
+      id="mainBg"
+      style="
+        display: flex;
+        justify-content: space-between;
+        height: 100vh;
+        padding: 100px;
+      "
+    >
+      <button
+        class="btn"
+        id="white"
+        style="
+          background-color: #f5f5f5;
+          color: #212121;
+          border: none;
+          border-radius: 2px;
+          height: 40px;
+          width: 150px;
+          margin-top: 30px;
+        "
+      >
+        White
+      </button>
+      <button
+        class="btn"
+        id="red"
+        style="
+          background-color: rgb(237, 60, 89);
+          color: #ffff;
+          border: none;
+          border-radius: 2px;
+          height: 40px;
+          width: 150px;
+          margin-top: 30px;
+        "
+      >
+        Red
+      </button>
+      <button
+        class="btn"
+        id="green"
+        style="
+          background-color: rgb(103, 143, 80);
+          color: #ffff;
+          border: none;
+          border-radius: 2px;
+          height: 40px;
+          width: 150px;
+          margin-top: 30px;
+        "
+      >
+        Green
+      </button>
+      <button
+        class="btn"
+        id="blue"
+        style="
+          background-color: rgb(76, 108, 236);
+          color: #ffff;
+          border: none;
+          border-radius: 2px;
+          height: 40px;
+          width: 150px;
+          margin-top: 30px;
+        "
+      >
+        Blue
+      </button>
+      <button
+        class="btn"
+        id="black"
+        style="
+          background-color: rgb(42, 41, 41);
+          color: #ffff;
+          border: none;
+          border-radius: 2px;
+          height: 40px;
+          width: 150px;
+          margin-top: 30px;
+        "
+      >
+        Black
+      </button>
+    </div>
+  </body>
+  <script>
+    const btnn1 = document.querySelectorAll(".btn");
+
+    //btnn1.forEach((element) => {
+    //   if (element.id == "white") {
+    //     element.addEventListener("mouseover", function () {
+    //       document.body.style.backgroundColor = "White";
+    //     });
+    //   } else if (element.id == "red") {
+    //     element.addEventListener("click", function () {
+    //       document.body.style.backgroundColor = "#FBA6A6";
+    //     });
+    //   } else if (element.id == "green") {
+    //     element.addEventListener("click", function () {
+    //       document.body.style.backgroundColor = "#8CAD7B";
+    //     });
+    //   } else if (element.id == "blue") {
+    //     element.addEventListener("click", function () {
+    //       document.body.style.backgroundColor = "#93BEFF";
+    //     });
+    //   } else if (element.id == "black") {
+    //     element.addEventListener("click", function () {
+    //       document.body.style.backgroundColor = "#F9B050";
+    //     });
+    //   }
+    // });
+
+    btnn1.forEach((element) => {
+      element.addEventListener("click", function (b) {
+        if (b.target.id === "white") {
+          document.body.style.backgroundColor = "White";
+        }
+        if (b.target.id === "red") {
+          document.body.style.backgroundColor = "#FBA6A6";
+        }
+        if (b.target.id === "green") {
+          document.body.style.backgroundColor = "#8CAD7B";
+        }
+        if (b.target.id === "blue") {
+          document.body.style.backgroundColor = "#93BEFF";
+        }
+        if (b.target.id === "black") {
+          document.body.style.backgroundColor = "#F9B050";
+        }
+      });
+    });
+  </script>
+</html>
+N
