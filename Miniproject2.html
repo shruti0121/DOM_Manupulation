@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playball&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>BMI CALCULATOR</title>
+  </head>
+  <body
+    style="
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <div
+      class="container"
+      style="
+        height: 600px;
+        width: 400px;
+        text-align: center;
+        border: 2px solid rgb(48, 108, 236);
+        font-family: Poppins, sans-serif;
+        font-weight: 400px;
+        font-style: normal;
+        border-radius: 8px;
+      "
+    >
+      <form>
+        <h1 style="padding: 30px; color: rgb(48, 108, 236)">Body Mass Index</h1>
+
+        <div
+          style="
+            color: rgb(25, 27, 30);
+            display: flex;
+            justify-content: space-around;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 20px;
+          "
+        >
+          <label>height in CM</label><input type="text" id="height" />
+        </div>
+        <div
+          style="
+            color: rgb(25, 27, 30);
+            display: flex;
+            justify-content: space-around;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 20px;
+          "
+        >
+          <label>weight in KG</label><input type="text" id="weight" />
+        </div>
+        <button
+          style="
+            border: none;
+            background-color: rgb(48, 108, 236);
+            color: white;
+            font-size: 18px;
+            height: 32px;
+            width: 270px;
+            border-radius: 2px;
+          "
+        >
+          Calculate
+        </button>
+
+        <div
+          id="result"
+          style="
+            background-color: rgb(48, 108, 236);
+            color: rgb(255, 210, 10);
+            font-size: 18px;
+            height: 32px;
+            width: 270px;
+            border-radius: 2px;
+            margin-left: 64px;
+            margin-right: 50px;
+            margin-top: 20px;
+          "
+        ></div>
+
+        <div
+          style="
+            padding: 20px;
+            text-align: left;
+            margin-top: 30px;
+            margin-left: 50px;
+            margin-right: 50px;
+          "
+        >
+          <h3>BMI Guide</h3>
+          <p>Under Weight = less than 18</p>
+          <p>Normal Range = 18 than 25</p>
+          <p>Overweight = greater than 25</p>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+    // this usecase will give you empty
+    //const height = parseInt(document.querySelector('#height').value)
+
+    form.addEventListener("submit", function (s) {
+      s.preventDefault();
+      const height = parseInt(document.querySelector("#height").value);
+      const weight = parseInt(document.querySelector("#weight").value);
+      const result = document.querySelector("#result");
+      if (height === "" || height < 0 || isNaN(height)) {
+        result.innerHTML = `give valid height ${height}`;
+      } else if (weight === "" || weight < 0 || isNaN(weight)) {
+        result.innerHTML = `give valid height ${weight}`;
+      } else {
+        const bmi = weight / ((height * height) / 10000).toFixed(2);
+        result.innerHTML = `<span>${bmi}</span>`;
+      }
+    });
+  </script>
+</html>

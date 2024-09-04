@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital clock</title>
+  </head>
+  <body
+    style="
+      background: linear-gradient(45deg, #f17fbe, #727df5);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+    "
+  >
+    <div>
+      <div
+        id="heading"
+        style="
+          text-align: center;
+          margin-bottom: 20px;
+          font-size: large;
+          color: #ffff;
+        "
+      >
+        Tour Local Time
+      </div>
+      <div
+        id="clock"
+        style="
+          height: 60px;
+          width: 200px;
+          background-color: #131313;
+          color: #ffff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+          border: none;
+          font-size: 28px;
+          box-shadow: 3px 3px 28px -3px rgba(15, 15, 15, 0.42);
+        "
+      ></div>
+    </div>
+  </body>
+  <script>
+    const clock = document.getElementById("clock");
+
+    setInterval(function () {
+      let date = new Date();
+      clock.innerHTML = date.toLocaleTimeString();
+    }, 1000);
+  </script>
+</html>
